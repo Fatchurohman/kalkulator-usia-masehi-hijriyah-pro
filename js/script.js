@@ -1,3 +1,4 @@
+alert("JavaScript aktif");
 function hitungUsia() {
 
     const input = document.getElementById("tanggalLahir").value;
