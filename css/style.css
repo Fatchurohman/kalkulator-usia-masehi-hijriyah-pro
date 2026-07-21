@@ -1,1 +1,132 @@
+/* ==========================================
+   KALKULATOR USIA MASEHI & HIJRIYAH PRO
+   Developed by Fatur Sky
+   Versi 1.0
+========================================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    color:#ffffff;
+}
+
+.container{
+    width:100%;
+    max-width:700px;
+}
+
+header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+header h1{
+    font-size:40px;
+    color:#FFD700;
+    margin-bottom:10px;
+}
+
+header h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.developer{
+    color:#d1d5db;
+    font-size:16px;
+}
+
+.card,
+.hasil{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.35);
+}
+
+.card h3,
+.hasil h3{
+    text-align:center;
+    margin-bottom:20px;
+    color:#FFD700;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input[type="date"]{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#FFD700;
+    color:#0f172a;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ffffff;
+    transform:scale(1.03);
+}
+
+#hasil{
+    line-height:1.8;
+    font-size:17px;
+}
+
+footer{
+    text-align:center;
+    color:#d1d5db;
+    margin-top:20px;
+    font-size:14px;
+}
+
+@media(max-width:600px){
+
+header h1{
+    font-size:30px;
+}
+
+header h2{
+    font-size:22px;
+}
+
+.card,
+.hasil{
+    padding:18px;
+}
+
+button{
+    font-size:16px;
+}
+
+}
