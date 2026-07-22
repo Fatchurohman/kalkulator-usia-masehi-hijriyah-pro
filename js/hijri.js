@@ -109,25 +109,25 @@ function hitungUsiaHijriyah(tanggalLahir) {
 
 
     let tahun = sekarangHijri.tahun - lahirHijri.tahun;
-    let bulan = sekarangHijri.bulan - lahirHijri.bulan;
-    let hari = sekarangHijri.hari - lahirHijri.hari;
-
-
     const daftarBulan = [
-        "Muharram",
-        "Safar",
-        "Rabiul Awal",
-        "Rabiul Akhir",
-        "Jumadil Awal",
-        "Jumadil Akhir",
-        "Rajab",
-        "Sya'ban",
-        "Ramadan",
-        "Syawal",
-        "Dzulqa'dah",
-        "Dzulhijjah"
-    ];
+    "Muharram",
+    "Safar",
+    "Rabiul Awal",
+    "Rabiul Akhir",
+    "Jumadil Awal",
+    "Jumadil Akhir",
+    "Rajab",
+    "Sya'ban",
+    "Ramadan",
+    "Syawal",
+    "Dzulqa'dah",
+    "Dzulhijjah"
+];
 
+let bulan = 
+    daftarBulan.indexOf(sekarangHijri.bulan) -
+    daftarBulan.indexOf(lahirHijri.bulan);
+    let hari = sekarangHijri.hari - lahirHijri.hari;
 
     let indexBulanSekarang = daftarBulan.indexOf(sekarangHijri.bulan);
     let indexBulanLahir = daftarBulan.indexOf(lahirHijri.bulan);
