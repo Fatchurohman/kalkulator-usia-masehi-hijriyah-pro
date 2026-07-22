@@ -101,3 +101,52 @@ function masehiKeHijriyah(tanggal) {
         tahun: year
     };
 }
+function hitungUsiaHijriyah(tanggalLahir) {
+
+    const lahirHijri = masehiKeHijriyah(tanggalLahir);
+    const sekarang = new Date();
+    const sekarangHijri = masehiKeHijriyah(sekarang);
+
+
+    let tahun = sekarangHijri.tahun - lahirHijri.tahun;
+    let bulan = sekarangHijri.bulan - lahirHijri.bulan;
+    let hari = sekarangHijri.hari - lahirHijri.hari;
+
+
+    const daftarBulan = [
+        "Muharram",
+        "Safar",
+        "Rabiul Awal",
+        "Rabiul Akhir",
+        "Jumadil Awal",
+        "Jumadil Akhir",
+        "Rajab",
+        "Sya'ban",
+        "Ramadan",
+        "Syawal",
+        "Dzulqa'dah",
+        "Dzulhijjah"
+    ];
+
+
+    let indexBulanSekarang = daftarBulan.indexOf(sekarangHijri.bulan);
+    let indexBulanLahir = daftarBulan.indexOf(lahirHijri.bulan);
+
+
+    if (hari < 0) {
+        bulan--;
+        hari += 30;
+    }
+
+    if (bulan < 0) {
+        tahun--;
+        bulan += 12;
+    }
+
+
+    return {
+        tahun: tahun,
+        bulan: bulan,
+        hari: hari
+    };
+}
