@@ -8,9 +8,11 @@ function masehiKeHijriyah(tanggal) {
 
     let jd;
 
-    if ((year > 1582) || 
+    if (
+        (year > 1582) ||
         (year === 1582 && month > 10) ||
-        (year === 1582 && month === 10 && day >= 15)) {
+        (year === 1582 && month === 10 && day >= 15)
+    ) {
 
         jd = Math.floor(
             (1461 * (year + 4800 + Math.floor((month - 14) / 12))) / 4
@@ -19,8 +21,7 @@ function masehiKeHijriyah(tanggal) {
             (367 * (month - 2 - 12 * Math.floor((month - 14) / 12))) / 12
         )
         - Math.floor(
-            (3 * Math.floor((year + 4900 + Math.floor((month - 14) / 12)) / 100))
-            / 4
+            (3 * Math.floor((year + 4900 + Math.floor((month - 14) / 12)) / 100)) / 4
         )
         + day - 32075;
 
@@ -34,41 +35,23 @@ function masehiKeHijriyah(tanggal) {
 
 
     let l = jd - 1948440 + 10632;
-
     let n = Math.floor((l - 1) / 10631);
 
     l = l - 10631 * n + 354;
 
-    let j = (
-        Math.floor((10985 - l) / 5316)
-    ) *
-    (
+    let j =
+        Math.floor((10985 - l) / 5316) *
         Math.floor((50 * l) / 17719)
-    )
-    +
-    (
-        Math.floor(l / 5670)
-    ) *
-    (
-        Math.floor((43 * l) / 15238)
-    );
+        +
+        Math.floor(l / 5670) *
+        Math.floor((43 * l) / 15238);
 
-    l = l -
-        (
-            Math.floor((30 - j) / 15)
-        )
-        *
-        (
-            Math.floor((17719 * j) / 50)
-        )
-        -
-        (
-            Math.floor(j / 16)
-        )
-        *
-        (
-            Math.floor((15238 * j) / 43)
-        )
+
+    l = l
+        - Math.floor((30 - j) / 15)
+        * Math.floor((17719 * j) / 50)
+        - Math.floor(j / 16)
+        * Math.floor((15238 * j) / 43)
         + 29;
 
 
@@ -98,45 +81,33 @@ function masehiKeHijriyah(tanggal) {
     return {
         hari: day,
         bulan: namaBulan[month - 1],
+        nomorBulan: month,
         tahun: year
     };
 }
+
+
+
 function hitungUsiaHijriyah(tanggalLahir) {
 
     const lahirHijri = masehiKeHijriyah(tanggalLahir);
+
     const sekarang = new Date();
     const sekarangHijri = masehiKeHijriyah(sekarang);
 
 
     let tahun = sekarangHijri.tahun - lahirHijri.tahun;
-    const daftarBulan = [
-    "Muharram",
-    "Safar",
-    "Rabiul Awal",
-    "Rabiul Akhir",
-    "Jumadil Awal",
-    "Jumadil Akhir",
-    "Rajab",
-    "Sya'ban",
-    "Ramadan",
-    "Syawal",
-    "Dzulqa'dah",
-    "Dzulhijjah"
-];
 
-let bulan = 
-    daftarBulan.indexOf(sekarangHijri.bulan) -
-    daftarBulan.indexOf(lahirHijri.bulan);
+    let bulan = sekarangHijri.nomorBulan - lahirHijri.nomorBulan;
+
     let hari = sekarangHijri.hari - lahirHijri.hari;
-
-    let indexBulanSekarang = daftarBulan.indexOf(sekarangHijri.bulan);
-    let indexBulanLahir = daftarBulan.indexOf(lahirHijri.bulan);
 
 
     if (hari < 0) {
         bulan--;
         hari += 30;
     }
+
 
     if (bulan < 0) {
         tahun--;
