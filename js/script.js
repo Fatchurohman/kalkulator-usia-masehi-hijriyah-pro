@@ -18,13 +18,11 @@ function hitungUsia() {
 
     if (hari < 0) {
         bulan--;
-        const bulanSebelumnya = new Date(
+        hari += new Date(
             sekarang.getFullYear(),
             sekarang.getMonth(),
             0
         ).getDate();
-
-        hari += bulanSebelumnya;
     }
 
     if (bulan < 0) {
@@ -33,34 +31,47 @@ function hitungUsia() {
     }
 
     const selisih = sekarang - lahir;
-    const totalHari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+    const totalHari = Math.floor(
+        selisih / (1000 * 60 * 60 * 24)
+    );
+
 
     const tanggalLahir = lahir.toLocaleDateString("id-ID", {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric"
+        weekday:"long",
+        day:"numeric",
+        month:"long",
+        year:"numeric"
     });
+
 
     const tanggalSekarang = sekarang.toLocaleDateString("id-ID", {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric"
+        weekday:"long",
+        day:"numeric",
+        month:"long",
+        year:"numeric"
     });
-const hijri = masehiKeHijriyah(input);
 
-const tanggalHijri = 
-    hijri.hari + " " +
-    hijri.bulan + " " +
-    hijri.tahun + " H";
+
+    const hijri = masehiKeHijriyah(input);
+
+    const tanggalHijri =
+        hijri.hari + " " +
+        hijri.bulan + " " +
+        hijri.tahun + " H";
+
+
     const usiaHijri = hitungUsiaHijriyah(input);
+
+
     document.getElementById("hasil").innerHTML = `
-        <p><b>Tanggal Lahir:</b><br>${tanggalLahir}</p>
+
+        <p><b>Tanggal Lahir Masehi:</b><br>
+        ${tanggalLahir}</p>
 
         <br>
 
-        <p><b>Tanggal Hari Ini:</b><br>${tanggalSekarang}</p>
+        <p><b>Tanggal Hari Ini:</b><br>
+        ${tanggalSekarang}</p>
 
         <br>
 
@@ -69,17 +80,22 @@ const tanggalHijri =
 
         <br>
 
-        <p><b>Total Hari Hidup:</b><br>
-        ${totalHari.toLocaleString("id-ID")} Hari</p>
+        <p><b>Tanggal Lahir Hijriyah:</b><br>
+        ${tanggalHijri}</p>
 
         <br>
 
-        <p><b>Tanggal Lahir Hijriyah:</b><br>
-${tanggalHijri}</p>
+        <p><b>Usia Hijriyah:</b><br>
+        ${usiaHijri.tahun} Tahun 
+        ${usiaHijri.bulan} Bulan 
+        ${usiaHijri.hari} Hari</p>
+
+        <br>
+
+        <p><b>Total Hari Hidup:</b><br>
+        ${totalHari.toLocaleString("id-ID")} Hari</p>
+
     `;
-<p><b>Usia Hijriyah:</b><br>
-${usiaHijri.tahun} Tahun 
-${usiaHijri.bulan} Bulan 
-${usiaHijri.hari} Hari</p>
+
 }
         
