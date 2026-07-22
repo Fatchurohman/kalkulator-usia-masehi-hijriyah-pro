@@ -77,6 +77,9 @@ const tanggalHijri =
         <p><b>Tanggal Lahir Hijriyah:</b><br>
 ${tanggalHijri}</p>
     `;
-
+<p><b>Usia Hijriyah:</b><br>
+${usiaHijri.tahun} Tahun 
+${usiaHijri.bulan} Bulan 
+${usiaHijri.hari} Hari</p>
 }
         
