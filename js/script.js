@@ -1,3 +1,5 @@
+console.log("SCRIPT BARU AKTIF");
+
 function hitungUsia() {
 
     const input = document.getElementById("tanggalLahir").value;
