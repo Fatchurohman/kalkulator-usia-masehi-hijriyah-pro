@@ -48,7 +48,12 @@ function hitungUsia() {
         month: "long",
         year: "numeric"
     });
+const hijri = masehiKeHijriyah(input);
 
+const tanggalHijri = 
+    hijri.hari + " " +
+    hijri.bulan + " " +
+    hijri.tahun + " H";
     document.getElementById("hasil").innerHTML = `
         <p><b>Tanggal Lahir:</b><br>${tanggalLahir}</p>
 
@@ -68,10 +73,8 @@ function hitungUsia() {
 
         <br>
 
-        <p><b>Usia Hijriyah:</b><br>
-        <span style="color:#FFD700;">
-        Akan tersedia pada pembaruan berikutnya.
-        </span></p>
+        <p><b>Tanggal Lahir Hijriyah:</b><br>
+${tanggalHijri}</p>
     `;
 
 }
