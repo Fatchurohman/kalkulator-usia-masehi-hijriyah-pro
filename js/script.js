@@ -54,6 +54,7 @@ const tanggalHijri =
     hijri.hari + " " +
     hijri.bulan + " " +
     hijri.tahun + " H";
+    const usiaHijri = hitungUsiaHijriyah(input);
     document.getElementById("hasil").innerHTML = `
         <p><b>Tanggal Lahir:</b><br>${tanggalLahir}</p>
 
