@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Usia Masehi & Hijriyah Pro</title>
+    <!-- Font Inter / Poppins untuk tampilan modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="moon-icon">🌙</div>
+        <h1>KALKULATOR USIA</h1>
+        <div class="badge-sub">MASEHI & HIJRIYAH PRO</div>
+    </header>
+
+    <!-- Form Input Tanggal Lahir -->
+    <section class="card-glass" id="inputSection">
+        <h3>MASUKKAN TANGGAL LAHIR</h3>
+        <div class="form-group">
+            <input type="date" id="tanggalLahir" required>
+        </div>
+        <button class="btn-primary" onclick="hitungUsia()">HITUNG USIA</button>
+    </section>
+
+    <!-- Tampilan Hasil Hitungan Usia (Sesuai Foto Referensi) -->
+    <section class="card-glass hidden" id="hasilSection">
+        <h3 class="hasil-title">HASIL HITUNGAN USIA</h3>
+
+        <div class="grid-hasil">
+            <!-- Usia Masehi -->
+            <div class="box-usia">
+                <div class="box-header">
+                    <span>USIA MASEHI</span>
+                    <span class="icon-calendar">📅</span>
+                </div>
+                <div class="box-content">
+                    <p><strong id="masehiTahun">XX</strong> TAHUN</p>
+                    <p><strong id="masehiBulan">XX</strong> BULAN</p>
+                    <p><strong id="masehiHari">XX</strong> HARI</p>
+                </div>
+            </div>
+
+            <!-- Usia Hijriyah -->
+            <div class="box-usia">
+                <div class="box-header">
+                    <span>USIA HIJRIYAH</span>
+                    <span class="icon-calendar">📅</span>
+                </div>
+                <div class="box-content">
+                    <p><strong id="hijriTahun">XX</strong> TAHUN</p>
+                    <p><strong id="hijriBulan">XX</strong> BULAN</p>
+                    <p><strong id="hijriHari">XX</strong> HARI</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-primary btn-ulang" onclick="resetForm()">HITUNG ULANG</button>
+
+        <footer class="card-footer">
+            <span>Versi 1.0 Professional Edition</span>
+            <span>© fatur62</span>
+        </footer>
+    </section>
+
+</div>
+
+<script src="js/hijri.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
