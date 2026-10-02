@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #112544 0%, #060e1a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 25px;
+}
+
+.moon-icon {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+header h1 {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.badge-sub {
+    display: inline-block;
+    background-color: #f7b731;
+    color: #0d1b2a;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 4px 16px;
+    border-radius: 8px;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+/* Glassmorphism Card Style */
+.card-glass {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 25px 20px 15px 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.card-glass h3 {
+    font-size: 16px;
+    color: #f7b731;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+/* Primary Button Styling (Kuning Menyala Sesuai Referensi) */
+.btn-primary {
+    width: 100%;
+    background: #f7b731;
+    color: #0d1b2a;
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(247, 183, 49, 0.3);
+}
+
+.btn-primary:hover {
+    background: #ffa801;
+    transform: translateY(-2px);
+}
+
+.grid-hasil {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.box-usia {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: left;
+}
+
+.box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #f7b731;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+}
+
+.box-content p {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 6px 0;
+    letter-spacing: 0.5px;
+}
+
+.box-content strong {
+    font-size: 15px;
+}
+
+.btn-ulang {
+    margin-top: 5px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hidden {
+    display: none;
+}
